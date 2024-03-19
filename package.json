@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "license": "MIT",
   "packageManager": "yarn@4.1.1",
+  "scripts": {
+    "lint": "eslint . --ext .js,.ts"
+  },
   "dependencies": {
     "@typescript-eslint/parser": "^7.3.1",
     "eslint": "^8.57.0",

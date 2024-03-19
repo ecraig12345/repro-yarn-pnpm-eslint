@@ -4,8 +4,9 @@ Demonstrating an issue with `vscode-eslint` in a repo using Yarn v4 with `pnpm` 
 
 1. Clone repo and open in VS Code
 2. `yarn`
-3. Open `index.js` and observe a `prefer-const` lint error
-3. Open `index.ts` and observe that there's no lint error with the same code
+3. Observe that `yarn lint` shows two errors
+4. Open `index.js` and observe a `prefer-const` lint error in the editor
+5. Open `index.ts` and observe that there's no lint error shown with the same code
 
 With Yarn v4's `pnpm` linker, the realpath of `@typescript-eslint/parser` is something like `node_modules/.store/@typescript-eslint-parser-virtual-783997822c/package` as shown below. (`node_modules/@typescript-eslint/parser` also exists, but it's a symlink.)
 
