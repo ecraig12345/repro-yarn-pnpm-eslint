@@ -26,3 +26,18 @@ node_modules
 └── @typescript-eslint
     └── parser -> ../.store/@typescript-eslint-parser-virtual-783997822c/package
 ```
+
+Interestingly, `pnpm` itself doesn't have this problem (note the `@typescript-eslint/parser` segment at the end of the path).
+```
+node_modules
+├── .pnpm
+│   └── @typescript-eslint+parser@7.3.1_eslint@8.57.0_typescript@5.4.2
+│       └── node_modules
+│           └── @typescript-eslint
+│               └── parser
+│                   ├── (contents)
+│                   └── package.json
+└── @typescript-eslint
+    └── parser -> ../.pnpm/@typescript-eslint+parser@7.3.1_eslint@8.57.0_typescript@5.4.2/node_modules/@typescript-eslint/parser
+```
+(You can demo this by removing the `packageManager` setting from `package.json`, `npm i -g pnpm`, `pnpm i`.)
